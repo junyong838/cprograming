@@ -1,0 +1,43 @@
+배열 int arr[5];
+
+char str[ ] = "abc";
+str = "dfg"; => 오류발생
+str[1] = 'a' 로 변경
+
+char *str = "abc";
+str = "dfg"; => 가능
+str[1] => 'a' 불가능
+
+문자열 출력
+fputs("abc", stdout); 줄바꿈 없음
+
+입력
+fgets(변수, sizeof(변수),stdin);
+줄바꿈 없애기
+arr[strlen(arr)-1] = 0;
+입력버퍼 지우기
+while(getchar()!='\n';
+
+scanf_s("%s", name1, sizeof(name1));
+scanf_s("%d", &age1);
+
+if (!strcmp(str1, str2)) //문자열 str1과 str2가 같으면
+strncmp(str1,str2,2); // 문자열 1,2의 2번째까지 비교
+
+문자열 복사
+strncpy_s(넣을 변수, sizeof(넣을 변수), 복사할 값, 읽을 갯수);
+문자열 추가 복사
+strncat_s(넣을 변수, sizeof(넣을 변수), 복사할 값, 읽을 갯수);
+
+sprintf_s 사용법
+char str1[5] = "123", str2[5] = "456", str3[10];
+sprintf_s (str3, sizeof(str3), "%s%s", str1, str2); 
+printf("%s", str3);
+
+구조체 선언
+typedef strut num
+{
+
+}NUM;
+
+NUM number = {요소, 요소2);
