@@ -16,67 +16,6 @@ void decrypt(const char* hexString, const unsigned char* key, char** decryptedOu
 #include <stdlib.h>
 #include <string.h>
 
-/*int main()
-{
-	errno_t err=0;
-	FILE *in_file, *out_file, *key_file;
-	int numbytes, num_key;
-
-
-	err = fopen_s(&in_file, "plain.txt", "rt");
-	if (err != 0) {
-		return 1;
-	}
-
-	err = fopen_s(&out_file, "cipher.txt", "wt");
-	if (err != 0) {
-		return 2;
-	}
-
-	err = fopen_s(&key_file, "secret_key.txt", "wt");
-	if (err != 0) {
-		return 3;
-	}
-
-	fseek(in_file, 0L, SEEK_END);
-	numbytes = ftell(in_file);
-	fseek(in_file, 0L, SEEK_SET);
-
-	// Init OpenSSL
-	OpenSSL_add_all_algorithms();
-	OPENSSL_init_crypto(OPENSSL_INIT_LOAD_CONFIG, NULL);
-
-	unsigned char key[EVP_MAX_KEY_LENGTH];
-	
-	// Generate random key
-	if (RAND_bytes(key, sizeof(key)) != 1) {
-		printf("Failed to generate random key");
-		return 0;
-	}
-
-	// Convert the key to a hexadecimal string
-	char hexKey[(EVP_MAX_KEY_LENGTH * 2) + 1];
-
-	for (int i = 0; i < sizeof(key); ++i) {
-		sprintf(&hexKey[i * 2], "%02x", key[i]);
-	}
-
-	hexKey[sizeof(key) * 2] = '\0';
-	fwrite(hexKey, sizeof(hexKey), 1, key_file);
-	
-	char encryptedMessage[512], *buf;
-	buf = (char*)malloc(numbytes + 1);
-
-	int cipher_size;
-	fread(buf, numbytes, 1, in_file);
-	buf[numbytes] = '\0';
-	encrypt(buf, (const unsigned char*)hexKey, encryptedMessage, &cipher_size);
-	fwrite(encryptedMessage, sizeof(char), cipher_size, out_file);
-
-	fclose(in_file);
-	fclose(out_file);
-	fclose(key_file);
-}*/
 int main()
 {
 	errno_t err = 0;
